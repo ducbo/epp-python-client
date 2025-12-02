@@ -642,6 +642,18 @@ def cmd_domain_update(domain,
     {
         "name": "clientDeleteProhibited",
     }
+
+    add_secdns, rem_secdns and change_secdns possible items are:
+    {
+        "key_tag": "123",
+        "alg": 3,
+        "digest_type": 1,
+        "digest": "1e2eba1550...",
+        "keydata_flags": "257",
+        "keydata_protocol": 3,
+        "keydata_alg": 1,
+        "keydata_pubkey": "LS0tLS1CRUdJ...",
+    }
     """
     cmd = {
         'cmd': 'domain_update',
