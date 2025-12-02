@@ -232,7 +232,6 @@ class EPPConnection:
         return ret
 
     def call(self, cmd, soup=None, quite=False):
-        print(cmd)
         cltrid_request = ''
         r_req = self.cltrid_regexp.search(cmd)
         if r_req:
