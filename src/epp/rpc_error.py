@@ -77,6 +77,10 @@ class EPPAuthorizationError(EPPError):
     code = 2201
 
 
+class EPPAuthorizationInvalidError(EPPError):
+    code = 2202
+
+
 class EPPCommandFailed(EPPError):
     code = 2400
 
@@ -101,6 +105,8 @@ def exception_from_response(response, message=None, code=None):
         return EPPParameterValueSyntaxError(response=response, message=message)
     elif code == 2201:
         return EPPAuthorizationError(response=response, message=message)
+    elif code == 2202:
+        return EPPAuthorizationInvalidError(response=response, message=message)
     elif code == 2302:
         return EPPObjectExists(response=response, message=message)
     elif code == 2303:
